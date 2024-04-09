@@ -11,7 +11,8 @@ import Link from "next/link";
 export default function Login({ csrfToken, error, providers }) {
   const [errorMessage, setErrorMessage] = useState("");
   const [Dark, setDark] = useState(false); // Default white theme, used in rendering the toggle button.
-
+  const [Guestdata, setGuestdata] = useState("");
+  const [Guestlogin, setGuestlogin] = useState(false);
   /*
   // Just a simple example for testing backend
   const handleclick = () => {
@@ -26,6 +27,14 @@ export default function Login({ csrfToken, error, providers }) {
       email_uid: event.target.email_uid.value,
       password: event.target.password.value,
     };
+  }
+  // Temporary solution to guest login :P
+  function handleguest(){
+    document.getElementById("email_uid").value = "Guest";
+    document.getElementById("password").value = "Guest";
+    document.getElementById("loginform").submit();
+    document.getElementById("email_uid").value = "";
+    document.getElementById("password").value = "";
   }
 
   // handle function for the button click event, setting the class of the container to dark, tailwind uses this to determine the dark scheme.
@@ -59,7 +68,7 @@ export default function Login({ csrfToken, error, providers }) {
               handledark();
             }}
           >
-            {Dark && (
+            {!Dark && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -76,7 +85,7 @@ export default function Login({ csrfToken, error, providers }) {
                 />
               </svg>
             )}
-            {!Dark && (
+            {Dark && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -113,6 +122,7 @@ export default function Login({ csrfToken, error, providers }) {
                   Login in to your account
                 </h1>
                 <form
+                  id ="loginform"
                   class="space-y-4 md:space-y-6"
                   method="post"
                   action="/api/auth/callback/credentials"
@@ -192,6 +202,13 @@ export default function Login({ csrfToken, error, providers }) {
                     class="w-full text-black bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center border dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 dark:text-white"
                   >
                     Login
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleguest}
+                    class="w-full text-black bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center border dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 dark:text-white"
+                  >
+                    Login as a guest
                   </button>
 
                   <p
