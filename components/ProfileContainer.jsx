@@ -266,7 +266,7 @@ export default function ProfileContainer({
                 src={
                   user.avatar.length
                     ? user.avatar[0].content
-                    : "/Avatar_test.png"
+                    : "/default.png"
                 }
                 sx={{
                   width: 110,
@@ -354,6 +354,7 @@ export default function ProfileContainer({
                   onClick={handleFollowerOpen}
                   // sx={{ mb: 1.5 }} color="text.secondary"
                   variant="subtitle1"
+                  style={{paddingRight:'10px', }}
                 >
                   {user.followerlist.length} Follower
                 </Link>
@@ -367,8 +368,9 @@ export default function ProfileContainer({
                   onClick={handleFollowingOpen}
                   // sx={{ mb: 1.5 }} color="text.secondary"
                   variant="subtitle1"
+                  
                 >
-                  {user.followinglist.length}Following
+                  {user.followinglist.length} Following
                 </Link>
               ) : (
                 <></>
