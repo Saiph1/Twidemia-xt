@@ -44,10 +44,11 @@ Through Twidemia GPTutor , we seek to build a supportive virtual community that 
     npm run dev
     ```
 
-1. Access the project on:
+1. Access the project with the "guest login" button from the login page:
     ```
     localhost:3000
     ```
+![login](https://github.com/Saiph1/Twidemia-xt/assets/75319087/787aae64-551d-4f17-afcb-cd5d4eee887a)
 
 1. For development, download github desktop at https://desktop.github.com/
 
