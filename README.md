@@ -65,7 +65,7 @@ Through Twidemia GPTutor , we seek to build a supportive virtual community that 
 - [Openai](https://openai.com/blog/openai-api) - GPT3 API
 
 
-## 🎓 Project overview <a name = "overview"></a>
+## :framed_picture: Project overview <a name = "overview"></a>
 
 ![Alt Text](public/overview.jpeg)
 
