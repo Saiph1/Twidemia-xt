@@ -26,21 +26,13 @@ export default function Input() {
     }
   }, [tweets_]);
 
-  // Simulating get data from backend
-  var current_user = -1;
-
-  if (current_user == -1) {
-    for (var i in users) {
-      if (users[i].userId == session.user.userId) {
-        current_user = users[i];
-        break;
-      }
-    }
+  // front-end filter for finding the right tweet to feed.
+  var current_user = -1; 
+  // Find the current user from the server-side data. 
+  for (var user in users){
+    if (users[user].userId == session.user.userId)
+      current_user = users[user];
   }
-
-  // console.log(current_user)
-
-  // console.log(current_user.followinglist)
 
   return (
     <div className="min-h-[100vh] bg-white w-full pb-8">
@@ -53,7 +45,7 @@ export default function Input() {
           {tweets?.map((tweet) => {
             var uid = tweet.userID;
             var creator = -1;
-
+            // find the matched creator from all the users object.
             for (var i in users) {
               if (users[i]._id == uid) {
                 creator = users[i];
@@ -63,12 +55,8 @@ export default function Input() {
 
             if (current_user != -1) {
               if (
-                //tweet.visibility == 0 ||
-                //(tweet.visibility == 1 &&
-                //  current_user.followinglist.includes(creator._id)) ||
-                //(tweet.visibility >= 1 && session.user.userId == creator.userId)
                 tweet.visibility <= 1 &&
-                current_user.followinglist.includes(creator._id)
+                (current_user.followinglist.includes(creator._id) || current_user._id == creator._id) // Show following users' tweet and self tweets
               ) {
                 //tweet.iconURL = creator.iconURL;
                 tweet.userName = creator.username;
@@ -78,7 +66,6 @@ export default function Input() {
                 tweet.numOfComments = tweet.comments.length;
                 tweet.numOfLikes = tweet.likers?.length;
                 tweet.tweetID = tweet.tweetID;
-                // console.log(tweet.content,creator)
                 return (
                   <Tweet
                     tweet={tweet}
