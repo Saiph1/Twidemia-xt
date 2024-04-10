@@ -50,8 +50,6 @@ Through Twidemia GPTutor , we seek to build a supportive virtual community that 
     ```
 ![login](https://github.com/Saiph1/Twidemia-xt/assets/75319087/787aae64-551d-4f17-afcb-cd5d4eee887a)
 
-1. For development, download github desktop at https://desktop.github.com/
-
 ## Developement
 1. Code linting: run `npm run lint` in terminanl
 1. Code formatting: run `npm run format` in terminal
@@ -66,7 +64,12 @@ Through Twidemia GPTutor , we seek to build a supportive virtual community that 
 - [Socket.io](https://socket.io/) - Real-time Chat System
 - [Openai](https://openai.com/blog/openai-api) - GPT3 API
 
-## 🎓 Authors <a name = "authors"></a>
+
+## 🎓 Project overview <a name = "overview"></a>
+
+![Alt Text](public/overview.jpeg)
+
+## 🎓 Credits <a name = "authors"></a>
 - Li Chi-Hsuan 
 - Wang Han-Yi 
 - Ng Hoi Leong 
