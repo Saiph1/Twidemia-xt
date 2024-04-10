@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useSession } from "next-auth/react";
 import TweetInputImage from "./TweetInputImage";
 
-export default function TweetInput() {
+export default function TweetInput(user) {
   const [privacySetting, setPrivacySetting] = useState("Public");
   const [input, setInput] = useState("Public");
   const { status, data: session } = useSession();
@@ -112,7 +112,9 @@ export default function TweetInput() {
       <div className="max-w-[3rem]">
         <img
           src={
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRr0YlatAy-hrNCQjzZ7fqDzNiXt7HGmzVaA&usqp=CAU"
+            user.avatar?.length
+              ? user.avatar[0].content
+              : "/default.png"
           }
           className="rounded-full w-full object-cover aspect-square"
         />

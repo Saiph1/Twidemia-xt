@@ -3,7 +3,8 @@ import React from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
-const Tweet = ({ tweet, viewer }) => {
+const Tweet = ({ tweet, viewer, avatar }) => {
+  console.log(tweet);
   const [retweet, setretweet] = React.useState(
     viewer.tweetlist
       .map((item) => {
@@ -83,7 +84,11 @@ const Tweet = ({ tweet, viewer }) => {
     >
       <div className="max-w-[3rem]">
         <img
-          src={"./default.png"}
+          src={
+            avatar
+            ? avatar.content
+            : "/default.png"
+          }
           alt="icon"
           className="rounded-full w-full object-cover aspect-square"
         />

@@ -13,7 +13,7 @@ export default function Widgets({ user, update_page }) {
   const [searchUserList, setSearchUserList] = useState([]);
   const [filteredList, setFilteredList] = new useState([]);
 
-  console.log(alluser);
+  // console.log(alluser);
   useEffect(() => {
     setload(true);
   }, [alluser]);
