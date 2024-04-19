@@ -17,17 +17,11 @@ Through Twidemia GPTutor , we seek to build a supportive virtual community that 
 
 1. Create a file called `.env.local` in the root folder, with the following contents:
     ```
-    MONGODB_URI=mongodb+srv://Twidemia_Beta:Pot7Igg91HosFmQ8@cluster0.0zq4ijz.mongodb.net/Twidemia_Beta?retryWrites=true&w=majority
+    MONGODB_URI=YOUR_URL
 
-    NEXTAUTH_SECRET=YxHMNOc9B+x9LlUD3wYU/ewzBgaI0bSmbnOZDoWEHZg=
+    NEXTAUTH_SECRET=YOUR_SECRET
     NEXTAUTH_URL=http://localhost:3000
     OPENAIKEY=YOUR_REQUESTED_KEY
-    
-    SMTP_HOST=smtp.gmail.com
-    SMTP_PORT=465
-    SMTP_USER=noreply.twidemia@gmail.com
-    SMTP_PASSWORD=lnkfoqavvcgouazw
-    SMTP_FROM_EMAIL=noreply.twidemia@gmail.com
 
     DOMAIN=http://localhost:3000
 
@@ -35,8 +29,8 @@ Through Twidemia GPTutor , we seek to build a supportive virtual community that 
     
     Alternatively, use another email account:
     ```
-    SMTP_USER=bot.twidemia@gmail.com
-    SMTP_PASSWORD=rsturtnocotliakb
+    SMTP_USER=YOUR_USER
+    SMTP_PASSWORD=YOUR_PASSWORD
     ```
 
 1. Run nextjs server in development mode
